@@ -19,10 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf8420ea-a5f3-4408-828d-9fb4b6977490" name="Default Changelist" comment="">
+    <list default="true" id="cf8420ea-a5f3-4408-828d-9fb4b6977490" name="Default Changelist" comment="dd">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +184,16 @@
       <updated>1599819182278</updated>
       <workItem from="1599819183471" duration="2482000" />
       <workItem from="1599827763259" duration="2070000" />
+      <workItem from="1599830649830" duration="335000" />
     </task>
+    <task id="LOCAL-00001" summary="dd">
+      <created>1599830707101</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599830707101</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,15 +209,24 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dd" />
+    <option name="LAST_COMMIT_MESSAGE" value="dd" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="203" width="559" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599822667775">
       <screen x="40" y="27" width="1326" height="741" />
     </state>
     <state x="413" y="203" width="559" height="403" key="#com.intellij.fileTypes.FileTypeChooser/40.27.1326.741@40.27.1326.741" timestamp="1599822667775" />
-    <state x="487" y="81" width="421" height="640" key="RollbackChangesDialog" timestamp="1599829243570">
+    <state x="487" y="81" width="421" height="640" key="RollbackChangesDialog" timestamp="1599830668757">
       <screen x="40" y="27" width="1326" height="741" />
     </state>
-    <state x="487" y="81" width="421" height="640" key="RollbackChangesDialog/40.27.1326.741@40.27.1326.741" timestamp="1599829243570" />
+    <state x="487" y="81" width="421" height="640" key="RollbackChangesDialog/40.27.1326.741@40.27.1326.741" timestamp="1599830668757" />
+    <state x="483" y="311" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599830730428">
+      <screen x="40" y="27" width="1326" height="741" />
+    </state>
+    <state x="483" y="311" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/40.27.1326.741@40.27.1326.741" timestamp="1599830730428" />
   </component>
 </project>
