@@ -19,9 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf8420ea-a5f3-4408-828d-9fb4b6977490" name="Default Changelist" comment="parse in controller">
-      <change afterPath="$PROJECT_DIR$/app/Console/Commands/RealtParse.php" afterDir="false" />
+    <list default="true" id="cf8420ea-a5f3-4408-828d-9fb4b6977490" name="Default Changelist" comment="parse in command">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/AdNode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +42,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="composer.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -213,7 +220,7 @@
       <workItem from="1599830649830" duration="2306000" />
       <workItem from="1599847663750" duration="65000" />
       <workItem from="1599847777620" duration="8396000" />
-      <workItem from="1599897695715" duration="16273000" />
+      <workItem from="1599897695715" duration="27639000" />
     </task>
     <task id="LOCAL-00001" summary="dd">
       <created>1599830707101</created>
@@ -243,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599914288253</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="parse in command">
+      <created>1599915380703</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1599915380703</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +284,8 @@
     <MESSAGE value="install react" />
     <MESSAGE value="required crawler" />
     <MESSAGE value="parse in controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="parse in controller" />
+    <MESSAGE value="parse in command" />
+    <option name="LAST_COMMIT_MESSAGE" value="parse in command" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="203" width="559" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599822667775">
@@ -281,6 +296,14 @@
       <screen x="40" y="27" width="1326" height="741" />
     </state>
     <state x="436" y="182" width="524" height="441" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/40.27.1326.741@40.27.1326.741" timestamp="1599848260556" />
+    <state x="498" y="73" width="390" height="664" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599929417332">
+      <screen x="40" y="27" width="1326" height="741" />
+    </state>
+    <state x="498" y="73" width="390" height="664" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/40.27.1326.741@40.27.1326.741" timestamp="1599929417332" />
+    <state x="436" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599915132014">
+      <screen x="40" y="27" width="1326" height="741" />
+    </state>
+    <state x="436" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/40.27.1326.741@40.27.1326.741" timestamp="1599915132014" />
     <state x="487" y="81" width="421" height="640" key="RollbackChangesDialog" timestamp="1599830668757">
       <screen x="40" y="27" width="1326" height="741" />
     </state>
