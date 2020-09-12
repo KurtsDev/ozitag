@@ -19,16 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf8420ea-a5f3-4408-828d-9fb4b6977490" name="Default Changelist" comment="required crawler">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ParseController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Ad.php" afterDir="false" />
+    <list default="true" id="cf8420ea-a5f3-4408-828d-9fb4b6977490" name="Default Changelist" comment="parse in controller">
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/RealtParse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_11_222825_create_ads_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +213,7 @@
       <workItem from="1599830649830" duration="2306000" />
       <workItem from="1599847663750" duration="65000" />
       <workItem from="1599847777620" duration="8396000" />
-      <workItem from="1599897695715" duration="15215000" />
+      <workItem from="1599897695715" duration="16273000" />
     </task>
     <task id="LOCAL-00001" summary="dd">
       <created>1599830707101</created>
@@ -243,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599849789800</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="parse in controller">
+      <created>1599914288253</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1599914288253</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +269,8 @@
     <MESSAGE value="dd" />
     <MESSAGE value="install react" />
     <MESSAGE value="required crawler" />
-    <option name="LAST_COMMIT_MESSAGE" value="required crawler" />
+    <MESSAGE value="parse in controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="parse in controller" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="203" width="559" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599822667775">
@@ -288,10 +289,10 @@
       <screen x="40" y="27" width="1326" height="741" />
     </state>
     <state x="192" y="31" width="1022" height="737" key="SettingsEditor/40.27.1326.741@40.27.1326.741" timestamp="1599848269872" />
-    <state x="297" y="132" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1599831419786">
+    <state x="297" y="132" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1599914296740">
       <screen x="40" y="27" width="1326" height="741" />
     </state>
-    <state x="297" y="132" width="800" height="535" key="Vcs.Push.Dialog.v2/40.27.1326.741@40.27.1326.741" timestamp="1599831419786" />
+    <state x="297" y="132" width="800" height="535" key="Vcs.Push.Dialog.v2/40.27.1326.741@40.27.1326.741" timestamp="1599914296740" />
     <state x="483" y="311" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599830730428">
       <screen x="40" y="27" width="1326" height="741" />
     </state>
