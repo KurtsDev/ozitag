@@ -17,7 +17,7 @@ class CreateAdsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('image');
-            $table->string('cost');
+            $table->integer('cost')->nullable();
             $table->string('phone');
             $table->integer('rooms');
             $table->text('description');

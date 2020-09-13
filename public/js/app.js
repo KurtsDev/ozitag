@@ -66559,6 +66559,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_AdNode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/AdNode */ "./resources/js/components/AdNode.js");
+/* harmony import */ var _components_AdFilter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/AdFilter */ "./resources/js/components/AdFilter.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -66583,11 +66584,39 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+
 var App = function App() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
       data = _useState2[0],
       setData = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      room = _useState4[0],
+      setRoom = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
+    min: '',
+    max: ''
+  }),
+      _useState6 = _slicedToArray(_useState5, 2),
+      cost = _useState6[0],
+      setCost = _useState6[1]; // useEffect(() => {
+  //     if (room) {
+  //         let filterData = data.filter(function (item) {
+  //             return item.rooms == room;
+  //         })
+  //         setFilterData(filterData);
+  //     } else {
+  //         setFilterData(data);
+  //     }
+  // }, [room])
+  //
+  // useEffect(() => {
+  //
+  // }, [cost])
+
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     function fetchData() {
@@ -66630,7 +66659,12 @@ var App = function App() {
     className: "card"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "card-header"
-  }, "\u041F\u0430\u0440\u0441\u0438\u043C \u0420\u0435\u0430\u043B\u0442\u0431\u0430\u0439"), data.map(function (item) {
+  }, "\u041F\u0430\u0440\u0441\u0438\u043C \u0420\u0435\u0430\u043B\u0442\u0431\u0430\u0439"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_AdFilter__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    room: room,
+    cost: cost,
+    setRoom: setRoom,
+    setCost: setCost
+  }), data.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_AdNode__WEBPACK_IMPORTED_MODULE_3__["default"], {
       item: item,
       key: item.id
@@ -66687,6 +66721,71 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/AdFilter.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/AdFilter.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var AdFilter = function AdFilter(_ref) {
+  var room = _ref.room,
+      cost = _ref.cost,
+      setRoom = _ref.setRoom,
+      setCost = _ref.setCost;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "input-group col-lg-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    name: "room",
+    id: "room",
+    type: "number",
+    className: "form-control",
+    placeholder: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043A\u043E\u043C\u043D\u0430\u0442",
+    defaultValue: room,
+    onChange: function onChange(event) {
+      setRoom(event.target.value);
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: " input-group col-lg-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    name: "cost_min",
+    id: "cost_min",
+    type: "number",
+    className: "form-control",
+    placeholder: "\u0426\u0435\u043D\u0430, \u043E\u0442",
+    defaultValue: cost.min,
+    onChange: function onChange(event) {
+      setCost({
+        min: event.target.value
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    name: "cost_max",
+    id: "cost_max",
+    type: "number",
+    className: "form-control",
+    placeholder: "\u0426\u0435\u043D\u0430, \u0434\u043E",
+    defaultValue: cost.max,
+    onChange: function onChange(event) {
+      setCost({
+        max: event.target.value
+      });
+    }
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AdFilter);
+
+/***/ }),
+
 /***/ "./resources/js/components/AdNode.js":
 /*!*******************************************!*\
   !*** ./resources/js/components/AdNode.js ***!
@@ -66703,6 +66802,9 @@ __webpack_require__.r(__webpack_exports__);
 var AdNode = function AdNode(_ref) {
   var item = _ref.item;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      borderBottom: '2px solid black'
+    },
     className: "card-body row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-lg-3"
@@ -66710,7 +66812,7 @@ var AdNode = function AdNode(_ref) {
     src: item.image
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-lg-9"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, item.cost), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, item.phone), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, item.rooms), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, item.description)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, item.cost, " \u0440\u0443\u0431./\u0441\u0443\u0442."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, item.phone), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, item.rooms), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, item.description)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AdNode);

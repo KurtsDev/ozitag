@@ -61,10 +61,15 @@ class RealtParse extends Command
             $crawler->filter('.bd-item')->each(function (Crawler $node) use ($rooms) {
                 $title = $node->filter('.title .media-body')->text();
                 $image = $node->filter('.bd-item-left img')->attr('data-original');
-                $coast = $node->filter('.bd-item-left .price-byr')->text();
+                $coastString = $node->filter('.bd-item-left .price-byr')->text();
                 $phone = $node->filter('.bd-item-right .bd-item-right-bottom a')->attr('data-full');
                 $description = $node->filter('.bd-item-right-center')->text();
                 $updated_at = $node->filter('.bd-item-right .bd-item-right-top p')->text();
+
+                $coast = preg_replace('/[^0-9]/', '', $coastString);
+                if ($coast === '') {
+                    $coast = null;
+                }
 
                 $fill = [
                     'title' => $title,
