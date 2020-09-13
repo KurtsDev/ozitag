@@ -66591,32 +66591,14 @@ var App = function App() {
       data = _useState2[0],
       setData = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
-      _useState4 = _slicedToArray(_useState3, 2),
-      room = _useState4[0],
-      setRoom = _useState4[1];
-
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
-    min: '',
-    max: ''
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
+    room: '',
+    costMin: '',
+    costMax: ''
   }),
-      _useState6 = _slicedToArray(_useState5, 2),
-      cost = _useState6[0],
-      setCost = _useState6[1]; // useEffect(() => {
-  //     if (room) {
-  //         let filterData = data.filter(function (item) {
-  //             return item.rooms == room;
-  //         })
-  //         setFilterData(filterData);
-  //     } else {
-  //         setFilterData(data);
-  //     }
-  // }, [room])
-  //
-  // useEffect(() => {
-  //
-  // }, [cost])
-
+      _useState4 = _slicedToArray(_useState3, 2),
+      filter = _useState4[0],
+      setFilter = _useState4[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     function fetchData() {
@@ -66631,7 +66613,11 @@ var App = function App() {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios('api/index', {});
+                return axios.get('api/index', {
+                  params: {
+                    filter: filter
+                  }
+                });
 
               case 2:
                 ads = _context.sent;
@@ -66648,7 +66634,7 @@ var App = function App() {
     }
 
     fetchData();
-  }, []);
+  }, [filter]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -66660,10 +66646,8 @@ var App = function App() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "card-header"
   }, "\u041F\u0430\u0440\u0441\u0438\u043C \u0420\u0435\u0430\u043B\u0442\u0431\u0430\u0439"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_AdFilter__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    room: room,
-    cost: cost,
-    setRoom: setRoom,
-    setCost: setCost
+    filter: filter,
+    setFilter: setFilter
   }), data.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_AdNode__WEBPACK_IMPORTED_MODULE_3__["default"], {
       item: item,
@@ -66732,13 +66716,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 var AdFilter = function AdFilter(_ref) {
-  var room = _ref.room,
-      cost = _ref.cost,
-      setRoom = _ref.setRoom,
-      setCost = _ref.setCost;
+  var filter = _ref.filter,
+      setFilter = _ref.setFilter;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -66749,9 +66737,11 @@ var AdFilter = function AdFilter(_ref) {
     type: "number",
     className: "form-control",
     placeholder: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043A\u043E\u043C\u043D\u0430\u0442",
-    defaultValue: room,
+    defaultValue: filter.room,
     onChange: function onChange(event) {
-      setRoom(event.target.value);
+      setFilter(_objectSpread(_objectSpread({}, filter), {}, {
+        room: event.target.value
+      }));
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: " input-group col-lg-8"
@@ -66761,11 +66751,11 @@ var AdFilter = function AdFilter(_ref) {
     type: "number",
     className: "form-control",
     placeholder: "\u0426\u0435\u043D\u0430, \u043E\u0442",
-    defaultValue: cost.min,
+    defaultValue: filter.costMin,
     onChange: function onChange(event) {
-      setCost({
-        min: event.target.value
-      });
+      setFilter(_objectSpread(_objectSpread({}, filter), {}, {
+        costMin: event.target.value
+      }));
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     name: "cost_max",
@@ -66773,11 +66763,11 @@ var AdFilter = function AdFilter(_ref) {
     type: "number",
     className: "form-control",
     placeholder: "\u0426\u0435\u043D\u0430, \u0434\u043E",
-    defaultValue: cost.max,
+    defaultValue: filter.costMax,
     onChange: function onChange(event) {
-      setCost({
-        max: event.target.value
-      });
+      setFilter(_objectSpread(_objectSpread({}, filter), {}, {
+        costMax: event.target.value
+      }));
     }
   })));
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdFilter = ({room, cost, setRoom, setCost}) => {
+const AdFilter = ({filter, setFilter}) => {
     return(
 
         <div className="card-body row">
@@ -11,9 +11,12 @@ const AdFilter = ({room, cost, setRoom, setCost}) => {
                     type="number"
                     className="form-control"
                     placeholder="Количество комнат"
-                    defaultValue={room}
+                    defaultValue={filter.room}
                     onChange={ (event) => {
-                       setRoom(event.target.value);
+                        setFilter({
+                            ...filter,
+                            room: event.target.value
+                        });
                     }}
                 />
             </div>
@@ -24,10 +27,11 @@ const AdFilter = ({room, cost, setRoom, setCost}) => {
                     type="number"
                     className="form-control"
                     placeholder="Цена, от"
-                    defaultValue={cost.min}
+                    defaultValue={filter.costMin}
                     onChange={ (event) => {
-                        setCost({
-                            min: event.target.value
+                        setFilter({
+                            ...filter,
+                            costMin: event.target.value
                         });
                     }}
                 />
@@ -37,10 +41,11 @@ const AdFilter = ({room, cost, setRoom, setCost}) => {
                     type="number"
                     className="form-control"
                     placeholder="Цена, до"
-                    defaultValue={cost.max}
+                    defaultValue={filter.costMax}
                     onChange={ (event) => {
-                        setCost({
-                            max: event.target.value
+                        setFilter({
+                            ...filter,
+                            costMax: event.target.value
                         });
                     }}
                 />

@@ -7,41 +7,23 @@ import AdFilter from "./components/AdFilter";
 const App = () => {
 
     const [data, setData] = useState([]);
-    const [room, setRoom] = useState('');
-    const [cost, setCost] = useState({
-        min: '',
-        max: '',
+    const [filter, setFilter] = useState({
+        room: '',
+        costMin: '',
+        costMax: '',
     });
-
-    // useEffect(() => {
-    //     if (room) {
-    //         let filterData = data.filter(function (item) {
-    //             return item.rooms == room;
-    //         })
-    //         setFilterData(filterData);
-    //     } else {
-    //         setFilterData(data);
-    //     }
-    // }, [room])
-    //
-    // useEffect(() => {
-    //
-    // }, [cost])
-
-
-
-
-
-
 
     useEffect(() => {
         async function fetchData() {
-            const ads = await axios('api/index',{});
+            const ads = await axios.get('api/index',{
+                params: {
+                    filter,
+                }
+            });
             setData(ads.data);
         }
         fetchData();
-    }, []);
-
+    }, [filter]);
 
     return (
         <div className="container">
@@ -50,18 +32,13 @@ const App = () => {
                     <div className="card">
                         <div className="card-header">Парсим Реалтбай</div>
 
-                        <AdFilter room={room} cost={cost} setRoom={setRoom} setCost={setCost}  />
-
-
-
+                        <AdFilter filter={filter} setFilter={setFilter}/>
 
                         {data.map(function (item) {
-                            return(
-                                <AdNode item={item} key={item.id} />
+                            return (
+                                <AdNode item={item} key={item.id}/>
                             );
                         })}
-
-
 
                     </div>
                 </div>
