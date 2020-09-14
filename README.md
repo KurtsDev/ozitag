@@ -12,6 +12,6 @@
 
 6 php artisan parse:realt
 
-7php artisan serve
+7 php artisan serve
 
 8 Возможно, если не будут отображатся изображения, сделать php artisan storage:link
