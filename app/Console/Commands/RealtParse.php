@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Ad;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Component\DomCrawler\Crawler;
 
 class RealtParse extends Command
@@ -60,7 +61,13 @@ class RealtParse extends Command
 
             $crawler->filter('.bd-item')->each(function (Crawler $node) use ($rooms) {
                 $title = $node->filter('.title .media-body')->text();
-                $image = $node->filter('.bd-item-left img')->attr('data-original');
+
+                $imageUrl = $node->filter('.bd-item-left img')->attr('data-original');
+                $contents = file_get_contents($imageUrl);
+                $url =  basename($imageUrl);
+                Storage::disk('public')->put($url, $contents, 'public');
+                $image = Storage::url($url);
+
                 $coastString = $node->filter('.bd-item-left .price-byr')->text();
                 $phone = $node->filter('.bd-item-right .bd-item-right-bottom a')->attr('data-full');
                 $description = $node->filter('.bd-item-right-center')->text();

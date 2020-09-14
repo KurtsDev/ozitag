@@ -5,6 +5,7 @@ const AdNode = ({item}) => {
         <div style={{borderBottom: '2px solid black'}} className="card-body row">
             <div className="col-lg-3">
                 <img src={item.image}/>
+
             </div>
             <div className="col-lg-9">
                 <p>{item.title}</p>
